@@ -1,0 +1,15 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+                    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                    MouseFilter="Stop"
+                    Title="{Loc whitelist-add-window-name}"
+                    MinSize="350 200">
+    <BoxContainer Orientation= "Vertical" Margin="10 0 20 0">
+        <!-- USERNAME -->
+        <TextEdit Name="Username" MaxHeight="100" VerticalAlignment="Stretch" MinHeight="100" Margin="0 10 0 0" >
+            <Label Name="PlaceholderUSERNAME" HorizontalAlignment="Left" Text="{Loc whitelist-add-window-username-place-holder}" />
+        </TextEdit>
+
+        <!-- Confirm Button-->
+        <controls:ConfirmButton Name="ConfirmButton" Text="{Loc whitelist-add-confirm-button}" />
+    </BoxContainer>
+</DefaultWindow>
