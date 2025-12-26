@@ -9,8 +9,12 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._FS19.UserInterface.Systems.WhitelistAdd.UI
 {
-    public sealed partial class WhitelistAddMenu : BaseWindow
+    [GenerateTypedNameReferences]
+    public sealed partial class WhitelistAddMenu : DefaultWindow
     {
-
+        public WhitelistAddMenu()
+        {
+            RobustXamlLoader.Load(this);
+        }
     }
 }
