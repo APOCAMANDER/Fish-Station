@@ -8,3 +8,5 @@ ui-escape-wiki = Wiki
 ui-escape-disconnect = Disconnect
 ui-escape-quit = Quit
 
+#FS19 Whitelist Button
+ui-escape-whitelist = Whitelist

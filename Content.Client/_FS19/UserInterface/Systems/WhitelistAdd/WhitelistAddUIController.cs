@@ -7,6 +7,8 @@ using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.Console;
 using Robust.Client.UserInterface;
+using Content.Client.Lobby.UI;
+using Content.Client.Gameplay;
 
 namespace Content.Client._FS19.UserInterface.Systems.WhitelistAdd;
 
@@ -26,16 +28,22 @@ public sealed class WhitelistAddUIController : UIController
 
     public void ToggleWindow()
     {
+        Log.Debug("Called");
         if (_whitelistAddWindow == null)
-            return;
+        {
+            Log.Debug("null");
+            _whitelistAddWindow ??= UIManager.CreateWindow<WhitelistAddMenu>();
+        }
 
         if (_whitelistAddWindow.IsOpen)
         {
+            Log.Debug("IsOpen");
             CloseWhitelistAddWindow();
             //EscapeButton!.Pressed = false;
         }
         else
         {
+            Log.Debug("else");
             _whitelistAddWindow.OpenCentered();
             //EscapeButton!.Pressed = true;
         }
