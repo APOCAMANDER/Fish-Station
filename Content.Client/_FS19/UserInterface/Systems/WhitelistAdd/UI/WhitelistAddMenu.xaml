@@ -6,7 +6,7 @@
     <BoxContainer Orientation= "Vertical" Margin="10 0 20 0">
         <!-- USERNAME -->
         <LineEdit
-            Name="Username"
+            Name="UsernameEdit"
             PlaceHolder="Username"
             HorizontalExpand="True"
         />

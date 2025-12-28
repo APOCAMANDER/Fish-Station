@@ -1,4 +1,5 @@
 using Content.Client._FS19.UserInterface.Systems.WhitelistAdd.UI;
+using Content.Shared._FS19.WhitelistAdd;
 using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Vote;
@@ -47,5 +48,10 @@ public sealed class WhitelistAddUIController : UIController
             _whitelistAddWindow.OpenCentered();
             //EscapeButton!.Pressed = true;
         }
+    }
+
+    private void OnWhitelistAddSent(WhitelistAddUsername message)
+    {
+
     }
 }
