@@ -1,16 +1,12 @@
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using Content.Shared._FS19.WhitelistAdd;
-using Robust.Server.Player;
+using Robust.Shared.Player;
+using Robust.Shared.Console;
 
 namespace Content.Server._FS19.WhitelistAdd;
 
-public sealed class WhitelistAddManager
+public interface WhitelistAddManager : SharedWhitelistAddManager
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-
-    private void ReceivedWhitelistAddUsername(WhitelistAddUsername message)
-    {
-        var inviter = message.MsgChannel.UserName;
-        var invitee = message.invitee;
-    }
-
 }

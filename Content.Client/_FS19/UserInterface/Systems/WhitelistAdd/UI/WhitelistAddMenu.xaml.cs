@@ -9,28 +9,28 @@ using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Player;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Content.Client._FS19.UserInterface.Systems.WhitelistAdd.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class WhitelistAddMenu : DefaultWindow
 {
-    public event Action<WhitelistAddUsername>? OnWhitelistAddSent;
+    private readonly WhitelistAddUIController _controller;
+    public event Action<WhitelistAddMessage>? OnWhitelistAddSent;
     public WhitelistAddMenu()
     {
         RobustXamlLoader.Load(this);
 
         ConfirmButton.OnPressed += _ => OnConfirmButtonPressed();
+        _controller = UserInterfaceManager.GetUIController<WhitelistAddUIController>();
     }
 
 
     private void OnConfirmButtonPressed()
     {
+        string invitee = UsernameEdit.Text;
 
-        var message = new WhitelistAddUsername{
-            Invitee = UsernameEdit.Text,
-        };
-
-        OnWhitelistAddSent?.Invoke(message);
+        _controller.OnWhitelistAddSent(invitee);
     }
 }
